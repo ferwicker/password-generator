@@ -12,3 +12,26 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+/* Pseudocoding
+
+when generateBtn is clicked, run writePassword function
+  writePassword function 
+  length = prompt length
+  change string to number
+  check length with min-max otherwise invalid, ask again?
+  confirm or select criteria...
+    lowercase (arrays?)
+    uppercase
+    numbers
+    special characters
+  how to check if at least one is selected...
+  
+    then generate password?
+    use length chosen to pick random characters (for loop)
+
+    then display result to screen (inner html?)
+
+
+*/
