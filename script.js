@@ -8,13 +8,20 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var symbols = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~"; //does not include "" and \
-var pwdLength = 8;
+var pwdLength = 8; // 8 default value
 
 console.log(lowercase + uppercase + numbers + symbols);
+
+pwdLength = parseInt(prompt('Enter your password length. (Must be between - and 128)'));
+
+console.log(pwdLength);
+
 
 // Write password to the #password input
 
 function writePassword() {
+
+
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
