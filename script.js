@@ -22,7 +22,7 @@ function writePassword() {
 
   if (pwdLength >= 8 && pwdLength <= 128){
 
-    var characters =
+    var characters = //How to make cleaner?
         confirm("Include lower case letters?") ? lowercase : '';
     characters =
         confirm("Include upper case letters?") ? characters + uppercase : characters;
@@ -31,15 +31,25 @@ function writePassword() {
     characters =
         confirm("Include special characters?") ? characters + symbols : characters;
     
-    
     console.log(characters);
 
-    var password = generatePassword();
+    //add validation for at least one chosen...
+
+    if(characters){
+
+      var password = generatePassword();
 
 
-    var passwordText = document.querySelector("#password"); 
-  
-    passwordText.value = password;
+      var passwordText = document.querySelector("#password"); 
+    
+      passwordText.value = password;
+      
+    } else {
+
+      alert('You must choose at least one set of characters, please try again.')
+
+    }
+
 
   } else {
     alert("Invalid password length. Please try again.")
