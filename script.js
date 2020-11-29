@@ -54,6 +54,10 @@ function writePassword() {
 
       console.log(password);
 
+      var passwordText = document.querySelector("#password"); 
+
+      passwordText.value = password;
+
       
     } else {
 
@@ -68,11 +72,6 @@ function writePassword() {
 
 }
 
-
-
-var passwordText = document.querySelector("#password"); 
-
-passwordText.value = password;
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
