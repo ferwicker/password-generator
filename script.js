@@ -12,20 +12,25 @@ var pwdLength = 8; // 8 default value
 
 console.log(lowercase + uppercase + numbers + symbols);
 
-pwdLength = parseInt(prompt('Enter your password length. (Must be between - and 128)'));
-
-console.log(pwdLength);
-
-
 // Write password to the #password input
 
 function writePassword() {
 
+  pwdLength = parseInt(prompt('Enter your password length. (Must be between 8 and 128)'));
 
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  console.log("Password length: " + pwdLength);
 
-  passwordText.value = password;
+  if (pwdLength >= 8 && pwdLength <= 128){
+
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+  
+    passwordText.value = password;
+
+  } else {
+    alert("Invalid password length!")
+  }
+
 
 }
 
