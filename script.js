@@ -1,7 +1,4 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
-
-
 
 // possible characters
 var lowercase = "abcdefghijklmnopqrstuvwxyz";
@@ -30,9 +27,7 @@ function writePassword() {
         confirm("Include numbers?") ? characters + numbers : characters;
     characters =
         confirm("Include special characters?") ? characters + symbols : characters;
-    
-    console.log(characters);
-    console.log(characters.length);
+
 
     //add validation for at least one character group chosen
     if(characters){
@@ -70,7 +65,6 @@ function writePassword() {
   };
 
 };
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
