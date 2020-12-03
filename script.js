@@ -10,8 +10,6 @@ var numbers = "0123456789";
 var symbols = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~"; //does not include "" and \
 var pwdLength = 8; // 8 default value
 
-console.log(lowercase + uppercase + numbers + symbols);
-
 // Write password to the #password input
 
 function writePassword() {
@@ -39,20 +37,21 @@ function writePassword() {
     //add validation for at least one character group chosen
     if(characters){
 
-      var password = generatePassword();
-
       //generate password
-      function generatePassword() 
-      {
+      function generatePassword() {
+
         var password = '';
 
-        for(var i = 0; i < pwdLength; i++){
+        for(var i = 0; i < pwdLength; i++) {
           password = password + (characters.charAt(Math.floor(Math.random() * characters.length)));
-        }
-        return password;
-      }
+        };
 
-      console.log(password);
+        return password;
+      };
+
+      var password = generatePassword();
+      
+      console.log(`Generated password: ${password}`);
 
       var passwordText = document.querySelector("#password"); 
 
@@ -63,38 +62,16 @@ function writePassword() {
 
       alert('You must choose at least one set of characters, please try again.')
 
-    }
+    };
 
 
   } else {
     alert("Invalid password length. Please try again.")
-  }
+  };
 
-}
+};
 
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
-/* Pseudocoding
-
-when generateBtn is clicked, run writePassword function
-  writePassword function 
-  length = prompt length
-  change string to number
-  check length with min-max otherwise invalid, ask again? or go to a default?
-  confirm or select criteria...
-    lowercase (arrays?-strings)
-    uppercase
-    numbers
-    special characters
-  how to check if at least one is selected...
-  
-    then generatePassword?
-    use length chosen to pick random characters (with for loop) from pool of selected possible characters
-    add selected characters to a string
-    then display result to screen (inner html?)
-
-
-*/
